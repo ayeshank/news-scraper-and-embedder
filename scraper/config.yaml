@@ -1,0 +1,174 @@
+# spiders:
+#   - spider: SFMTA_Spider
+#     url: https://www.sfmta.com/news-blog/
+#     category_id: 1
+#     day_frequency: 2
+#     title: Politics
+
+#   - spider: SFWeekly_Spider
+#     url: https://www.sfweekly.com/
+#     category_id: 2
+#     day_frequency: 2
+#     title: Business & Finance
+
+#   - spider: NWS_Spider
+#     url: https://www.weather.gov/news/
+#     category_id: 3
+#     day_frequency: 2
+#     title: Technology
+
+#   - spider: SFCurbed_Spider
+#     url: https://sf.curbed.com/
+#     category_id: 1
+#     day_frequency: 2
+#     title: Politics
+
+#   - spider: SFExaminer_Spider
+#     url: https://sfexaminer.com/
+#     category_id: 2
+#     day_frequency: 2
+#     title: Business & Finance
+
+#   - spider: MissionLocal_Spider
+#     url: https://missionlocal.org/
+#     category_id: 3
+#     day_frequency: 2
+#     title: Technology
+
+#   - spider: SocketSite_Spider
+#     url: https://socketsite.com/
+#     category_id: 1
+#     day_frequency: 2
+#     title: Politics
+
+#   - spider: TableHopper_Spider
+#     url: https://www.tablehopper.com/
+#     category_id: 2
+#     day_frequency: 2
+#     title: Business & Finance
+    
+#   - spider: BrokeAssStuart_Spider
+#     url: https://brokeassstuart.com/news/
+#     category_id: 3
+#     day_frequency: 2
+#     title: Technology
+
+#   - spider: SFistWeather_Spider
+#     url: https://sfist.com/weather/
+#     category_id: 1
+#     day_frequency: 2
+#     title: Politics
+spiders:
+  - spider: Aljazeera_Asia_Spider
+    url: https://www.aljazeera.com/asia/
+    category_id: 1
+    day_frequency: 2
+    title: International
+  - spider: Aljazeera_Middleeast_Spider
+    url: https://www.aljazeera.com/middle-east/
+    category_id: 1
+    day_frequency: 2
+    title: International
+  - spider: Aljazeera_Uscanada_Spider
+    url: https://www.aljazeera.com/us-canada/
+    category_id: 1
+    day_frequency: 2
+    title: International
+  - spider: Aljazeera_Europe_Spider
+    url: https://www.aljazeera.com/europe/
+    category_id: 1
+    day_frequency: 2
+    title: International
+  - spider: Aljazeera_Latinamerica_Spider
+    url: https://www.aljazeera.com/latin-america/
+    category_id: 1
+    day_frequency: 2
+    title: International
+  - spider: Dawn_Pakistan_Spider
+    url: https://www.dawn.com/pakistan
+    category_id: 3
+    day_frequency: 2
+    title: Pakistan
+  - spider: Dawn_LatestNews_Spider
+    url: https://www.dawn.com/latest-news
+    category_id: 3
+    day_frequency: 2
+    title: LatestNews
+  - spider: Dawn_Opinion_Spider
+    url: https://www.dawn.com/opinion
+    category_id: 3
+    day_frequency: 2
+    title: Opinion
+  - spider: Dawn_Business_Spider
+    url: https://www.dawn.com/business
+    category_id: 3
+    day_frequency: 2
+    title: Business
+  - spider: Dawn_World_Spider
+    url: https://www.dawn.com/world
+    category_id: 3
+    day_frequency: 2
+    title: World
+  - spider: Dawn_Sport_Spider
+    url: https://www.dawn.com/sport
+    category_id: 3
+    day_frequency: 2
+    title: Sport
+  - spider: Dawn_Tech_Spider
+    url: https://www.dawn.com/tech
+    category_id: 3
+    day_frequency: 2
+    title: Technology
+  - spider: Dawn_Popular_Spider
+    url: https://www.dawn.com/popular
+    category_id: 3
+    day_frequency: 2
+    title: Popular
+  - spider: Dawn_Generic_Spider
+    url: https://www.dawn.com/pakistan
+    category: pakistan
+    title: Pakistan
+    category_id: 3
+    day_frequency: 2
+  - spider: Dawn_Generic_Spider
+    url: https://www.dawn.com/latest-news
+    category: latest-news
+    title: LatestNews
+    category_id: 3
+    day_frequency: 2
+  - spider: Dawn_Generic_Spider
+    url: https://www.dawn.com/opinion
+    category: opinion
+    title: Opinion
+    category_id: 3
+    day_frequency: 2
+  - spider: Dawn_Generic_Spider
+    url: https://www.dawn.com/business
+    category: business
+    title: Business
+    category_id: 3
+    day_frequency: 2
+  - spider: Dawn_Generic_Spider
+    url: https://www.dawn.com/world
+    category: world
+    title: World
+    category_id: 3
+    day_frequency: 2
+  - spider: Dawn_Generic_Spider
+    url: https://www.dawn.com/sport
+    category: sport
+    title: Sport
+    category_id: 3
+    day_frequency: 2
+  - spider: Dawn_Generic_Spider
+    url: https://www.dawn.com/tech
+    category: tech
+    title: Technology
+    category_id: 3
+    day_frequency: 2
+  - spider: Dawn_Generic_Spider
+    url: https://www.dawn.com/popular
+    category: popular
+    title: Popular
+    category_id: 3
+    day_frequency: 2
