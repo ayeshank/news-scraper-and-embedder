@@ -49,7 +49,7 @@ langchain-core==0.3.60
 langchain-community==0.3.24
 langchain-huggingface==0.2.0
 sentence-transformers==4.1.0
-torch==2.6.0+cu124
+torch
 nltk==3.8.1
 transformers==4.51.3
 huggingface-hub==0.31.2
