@@ -14,7 +14,7 @@ import sys
 from multiprocessing.context import Process
 import time
 
-output_folder = "/home/ubuntu/news-to-podcast/shared_data/scraped_article"
+output_folder = "/home/ubuntu/shared_data/scraped_articles"
 os.makedirs(output_folder, exist_ok=True)
 
 def make_csv_file(save_path, spider_name, first_row):

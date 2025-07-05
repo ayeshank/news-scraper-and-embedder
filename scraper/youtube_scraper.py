@@ -2,7 +2,7 @@ import feedparser, pandas as pd, os, hashlib
 from youtube_transcript_api import YouTubeTranscriptApi
 from urllib.parse import urlparse, parse_qs
 
-CSV_FOLDER_PATH = "/home/ubuntu/news-to-podcast/shared_data/scraped_articles"
+CSV_FOLDER_PATH = "/home/ubuntu/shared_data/scraped_articles"
 os.makedirs(CSV_FOLDER_PATH, exist_ok=True)
 OUTPUT_FILE = os.path.join(CSV_FOLDER_PATH, "youtube_combined_dataset.csv")
 
