@@ -14,8 +14,8 @@ logging.basicConfig(
 )
 
 # ========== CONFIGURATION ==========
-CSV_FOLDER_PATH = "/home/ubuntu/shared_data/scraped_articles"
-CHROMA_PERSIST_DIR = "/home/ubuntu/shared_data/vector_db"
+CSV_FOLDER_PATH = "/home/ubuntu/shared_data/scraped_articles/"
+CHROMA_PERSIST_DIR = "/home/ubuntu/shared_data/vector_db/"
 CHROMA_COLLECTION_NAME = "news_articles"
 EMBED_MODEL_NAME = "all-MiniLM-L6-v2"
 CHUNK_SIZE = 500

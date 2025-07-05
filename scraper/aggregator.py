@@ -14,14 +14,14 @@ import sys
 from multiprocessing.context import Process
 import time
 
-output_folder = "/home/ubuntu/shared_data/scraped_articles"
+output_folder = "/home/ubuntu/shared_data/scraped_articles/"
 os.makedirs(output_folder, exist_ok=True)
 
 def make_csv_file(save_path, spider_name, first_row):
-    csv_files = [x for x in glob(save_path + "*.csv") if spider_name in x]
+    csv_files = [x for x in glob(os.path.join(save_path, "*.csv")) if spider_name in x]
     if len(csv_files) == 0:
         timestr = time.strftime("%Y%m%d_%H%M")
-        filename = save_path + f"{spider_name}_{timestr}.csv"
+        filename = os.path.join(save_path, f"{spider_name}_{timestr}.csv")
         csv_fp = open(filename, mode='w', encoding="utf-8")
         csv_file = csv.writer(csv_fp, 
                                 delimiter=',', 
