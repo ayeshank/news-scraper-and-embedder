@@ -2,6 +2,9 @@
 #!/bin/bash
 set -e
 
+# Activate your venv (adjust path if needed)
+source /home/ubuntu/venv/bin/activate
+
 cd /home/ubuntu/news-scraper-and-embedder
 
 # [1] Run Website Scraper
