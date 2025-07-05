@@ -34,10 +34,23 @@ def load_and_clean_csv(folder_path: str) -> pd.DataFrame:
 
         dfs = []
         for file in all_files:
+            file_path = os.path.join(folder_path, file)
             logging.info(f"CSV-1003: Reading File: {file}")
-            df = pd.read_csv(os.path.join(folder_path, file))
-            df["source_file"] = file
-            dfs.append(df)
+
+            try:
+                df = pd.read_csv(file_path)
+                if df.empty or "article_content" not in df.columns:
+                    logging.warning(f"CSV-1005: Skipping empty or invalid file: {file}")
+                    continue
+                df["source_file"] = file
+                dfs.append(df)
+            except pd.errors.EmptyDataError:
+                logging.warning(f"CSV-1006: Skipping corrupt or empty CSV: {file}")
+                continue
+
+        if not dfs:
+            logging.warning("CSV-1007: No usable data found in any CSV.")
+            return pd.DataFrame()
 
         combined = pd.concat(dfs, ignore_index=True)
         combined = combined[combined["article_content"].notnull()]
@@ -47,6 +60,7 @@ def load_and_clean_csv(folder_path: str) -> pd.DataFrame:
     except Exception as e:
         logging.error(f"CSV-1099: Error In Loading And Cleaning Files: {e}")
         raise
+
 
 def chunk_articles(df: pd.DataFrame) -> list:
     logging.info("CHUNK-1001: Chunking Articles Begins.")
