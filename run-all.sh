@@ -2,7 +2,7 @@
 #!/bin/bash
 set -e
 
-cd /home/ubuntu/news-to-podcast
+cd /home/ubuntu/news-scraper-and-embedder
 
 # [1] Run Website Scraper
 echo "Running for Web Scraper";
