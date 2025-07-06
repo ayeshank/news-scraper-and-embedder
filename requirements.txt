@@ -53,3 +53,4 @@ torch
 nltk==3.8.1
 transformers==4.51.3
 huggingface-hub==0.31.2
+boto3

@@ -6,6 +6,8 @@ from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 import nltk
+import boto3
+from botocore.exceptions import NoCredentialsError
 
 # ========== LOGGING CONFIGURATION ==========
 logging.basicConfig(
@@ -16,6 +18,9 @@ logging.basicConfig(
 # ========== CONFIGURATION ==========
 CSV_FOLDER_PATH = "/home/ubuntu/shared_data/scraped_articles/"
 CHROMA_PERSIST_DIR = "/home/ubuntu/shared_data/vector_db/"
+S3_BUCKET_NAME = "llm-instance-bucket"
+S3_SCRAPED_FOLDER = "scraped_articles/"
+S3_VECTOR_DB_FOLDER = "vector_db/"
 CHROMA_COLLECTION_NAME = "news_articles"
 EMBED_MODEL_NAME = "all-MiniLM-L6-v2"
 CHUNK_SIZE = 500
@@ -96,6 +101,19 @@ def embed_and_store_chunks(docs: list, persist_path: str) -> Chroma:
         logging.error(f"EMBED-1099: Error In Embedding Creation And Storing In Vector Db: {e}")
         raise
 
+
+def upload_folder_to_s3(local_folder, s3_prefix):
+    s3 = boto3.client('s3')
+    for root, _, files in os.walk(local_folder):
+        for file in files:
+            local_path = os.path.join(root, file)
+            s3_path = os.path.join(s3_prefix, os.path.relpath(local_path, local_folder))
+            try:
+                s3.upload_file(local_path, S3_BUCKET_NAME, s3_path)
+                logging.info(f"S3-UPLOAD: Uploaded {local_path} to s3://{S3_BUCKET_NAME}/{s3_path}")
+            except NoCredentialsError:
+                logging.error("S3-UPLOAD-ERROR: AWS credentials not found")
+
 if __name__ == "__main__":
     logging.info("EMBED-PIPELINE-0001: Starting News Data Preprocessing And Embedding Genertion.")
     try:
@@ -105,6 +123,7 @@ if __name__ == "__main__":
         else:
             chunked_docs = chunk_articles(df)
             vectordb = embed_and_store_chunks(chunked_docs, CHROMA_PERSIST_DIR)
+            upload_folder_to_s3(CHROMA_PERSIST_DIR, S3_VECTOR_DB_FOLDER)
             logging.info("EMBED-PIPELINE-0003: Embedding Pipeline All Steps Completed Successfully.")
     except Exception as pipeline_error:
         logging.critical(f"EMBED-PIPELINE-0099: Embedding Pipeline Execution Failed: {pipeline_error}")

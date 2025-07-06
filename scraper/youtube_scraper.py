@@ -1,6 +1,8 @@
 import feedparser, pandas as pd, os, hashlib
 from youtube_transcript_api import YouTubeTranscriptApi
 from urllib.parse import urlparse, parse_qs
+from utils_s3 import upload_file_to_s3
+
 
 CSV_FOLDER_PATH = "/home/ubuntu/shared_data/scraped_articles"
 os.makedirs(CSV_FOLDER_PATH, exist_ok=True)
@@ -52,4 +54,9 @@ for source_name, channel_id in channels.items():
 if os.path.exists(OUTPUT_FILE):
     os.remove(OUTPUT_FILE)
 pd.DataFrame(combined_data).to_csv(OUTPUT_FILE, index=False)
+upload_file_to_s3(
+    local_path=OUTPUT_FILE,
+    bucket_name="llm-instance-bucket",
+    s3_key="scraped_articles/youtube_combined_dataset.csv"
+)
 print(f"✅ Saved YouTube data: {OUTPUT_FILE}")
