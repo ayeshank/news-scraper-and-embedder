@@ -13,7 +13,6 @@ from scrapy.utils.project import get_project_settings
 import sys
 from multiprocessing.context import Process
 import time
-from utils_s3 import upload_folder_to_s3
 
 output_folder = "/home/ubuntu/shared_data/scraped_articles/"
 os.makedirs(output_folder, exist_ok=True)
@@ -100,12 +99,6 @@ class Aggregator:
             csv_file.writerow(to_append_lst)
             csv_fp.flush()
         csv_fp.close()
-        upload_folder_to_s3(
-            local_folder=output_folder,
-            bucket_name="llm-instance-bucket",
-            s3_prefix="scraped_articles/"
-        )
-        
 # main
 
 def run_spider(spider_config):

@@ -16,6 +16,11 @@ echo "Running for Youtube Scraper";
 python3 scraper/youtube_scraper.py
 echo "Youtube Scrapper Pipeline run complete."
 
+# [3] Upload scraped_articles to S3
+echo "Uploading scraped_articles to S3";
+python3 scraper/upload_data_to_s3.py
+echo "Upload of scraped_articles complete."
+
 # [3] Run Vector Embedding Pipeline
 echo "Running for Vector Embedding";
 python3 vector_embedding/vector_embedding_pipeline.py

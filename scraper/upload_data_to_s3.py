@@ -13,10 +13,9 @@ def upload_folder_to_s3(local_folder, bucket_name, s3_prefix):
             print(f"Uploading {local_path} to s3://{bucket_name}/{s3_key}")
             s3.upload_file(local_path, bucket_name, s3_key)
             
-def upload_file_to_s3(local_path, bucket_name, s3_key):
-    s3 = boto3.client("s3")
-    try:
-        s3.upload_file(local_path, bucket_name, s3_key)
-        logging.info(f"S3-UPLOAD: Uploaded {local_path} to s3://{bucket_name}/{s3_key}")
-    except NoCredentialsError:
-        logging.error("S3-UPLOAD-ERROR: AWS credentials not found")
+if __name__ == "__main__":
+    upload_folder_to_s3(
+        local_folder="/home/ubuntu/shared_data/scraped_articles",
+        bucket_name="llm-instance-bucket",
+        s3_prefix="scraped_articles/"
+    )
