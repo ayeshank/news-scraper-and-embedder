@@ -1,4 +1,3 @@
-# File: run_all.sh
 #!/bin/bash
 set -e
 
