@@ -55,8 +55,8 @@ if os.path.exists(OUTPUT_FILE):
     os.remove(OUTPUT_FILE)
 pd.DataFrame(combined_data).to_csv(OUTPUT_FILE, index=False)
 upload_file_to_s3(
-    local_path=OUTPUT_FILE,
+    local_path=CSV_FOLDER_PATH,
     bucket_name="llm-instance-bucket",
-    s3_key="scraped_articles/youtube_combined_dataset.csv"
+    s3_key="scraped_articles/"
 )
 print(f"✅ Saved YouTube data: {OUTPUT_FILE}")
