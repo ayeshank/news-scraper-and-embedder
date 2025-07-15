@@ -14,6 +14,7 @@ import sys
 from multiprocessing.context import Process
 import time
 
+# output_folder=os.path.join(os.getcwd(), "outputs/")
 output_folder = "/home/ubuntu/shared_data/scraped_articles/"
 os.makedirs(output_folder, exist_ok=True)
 
