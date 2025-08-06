@@ -1,56 +1,114 @@
-attrs==25.3.0
-Automat==22.10.0
-certifi==2025.4.26
-cffi==1.16.0
-charset-normalizer==3.4.2
-constantly==23.10.4
-cryptography==41.0.5
-cssselect==1.2.0
-filelock==3.18.0
-hyperlink==21.0.0
-idna==3.10
-incremental==22.10.0
-itemadapter==0.8.0
-itemloaders==1.1.0
-jmespath==1.0.1
-lxml==4.9.3
-numpy==1.26.4
-packaging==24.2
-pandas==2.2.2
-parsel==1.8.1
-Protego==0.3.0
-pyasn1==0.5.0
-pyasn1-modules==0.3.0
-pycparser==2.21
-PyDispatcher==2.0.7
-pyOpenSSL==23.3.0
-python-dateutil==2.8.2
-pytz==2023.3.post1
-PyYAML==6.0.2
-queuelib==1.6.2
-requests==2.32.3
-requests-file==1.5.1
-Scrapy==2.11.1
-service-identity==23.1.0
-six==1.16.0
-tldextract==5.1.0
-Twisted==22.10.0
-typing_extensions==4.13.2
-tzdata==2023.3
-urllib3==2.4.0
-w3lib==2.1.2
-zope.interface==6.1
+# attrs==25.3.0
+# Automat==22.10.0
+# certifi==2025.4.26
+# cffi==1.16.0
+# charset-normalizer==3.4.2
+# constantly==23.10.4
+# cryptography==41.0.5
+# cssselect==1.2.0
+# filelock==3.18.0
+# hyperlink==21.0.0
+# idna==3.10
+# incremental==22.10.0
+# itemadapter==0.8.0
+# itemloaders==1.1.0
+# jmespath==1.0.1
+# lxml==4.9.3
+# numpy==1.26.4
+# packaging==24.2
+# pandas==2.2.2
+# parsel==1.8.1
+# Protego==0.3.0
+# pyasn1==0.5.0
+# pyasn1-modules==0.3.0
+# pycparser==2.21
+# PyDispatcher==2.0.7
+# pyOpenSSL==23.3.0
+# python-dateutil==2.8.2
+# pytz==2023.3.post1
+# PyYAML==6.0.2
+# queuelib==1.6.2
+# requests==2.32.3
+# requests-file==1.5.1
+# Scrapy==2.11.1
+# service-identity==23.1.0
+# six==1.16.0
+# tldextract==5.1.0
+# Twisted==22.10.0
+# typing_extensions==4.13.2
+# tzdata==2023.3
+# urllib3==2.4.0
+# w3lib==2.1.2
+# zope.interface==6.1
 
-feedparser==6.0.10
-youtube-transcript-api==0.6.1
-chromadb==0.4.24
-langchain==0.3.25
-langchain-core==0.3.60
-langchain-community==0.3.24
-langchain-huggingface==0.2.0
-sentence-transformers==4.1.0
+# feedparser==6.0.10
+# youtube-transcript-api==0.6.1
+# chromadb==0.4.24
+# langchain==0.3.25
+# langchain-core==0.3.60
+# langchain-community==0.3.24
+# langchain-huggingface==0.2.0
+# sentence-transformers==4.1.0
+# torch
+# nltk==3.8.1
+# transformers==4.51.3
+# huggingface-hub==0.31.2
+# boto3
+
+attrs
+Automat
+certifi
+cffi
+charset-normalizer
+constantly
+cryptography
+cssselect
+filelock
+hyperlink
+idna
+incremental
+itemadapter
+itemloaders
+jmespath
+lxml
+numpy
+packaging
+pandas
+parsel
+Protego
+pyasn1
+pyasn1-modules
+pycparser
+PyDispatcher
+pyOpenSSL
+python-dateutil
+pytz
+PyYAML
+queuelib
+requests
+requests-file
+Scrapy
+service-identity
+six
+tldextract
+Twisted
+typing_extensions
+tzdata
+urllib3
+w3lib
+zope.interface
+
+
+feedparser
+youtube-transcript-api
+chromadb
+langchain
+langchain-core
+langchain-community
+langchain-huggingface
+sentence-transformers
 torch
-nltk==3.8.1
-transformers==4.51.3
-huggingface-hub==0.31.2
+nltk
+transformers
+huggingface-hub
 boto3
